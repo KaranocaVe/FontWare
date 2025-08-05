@@ -36,7 +36,7 @@
                     1 style
                 </TextBlock>
 
-                <ic:FluentIcon Width="16" Height="16" Margin="10,0,0,0"
+                <ic:FluentIcon Width="20" Height="20" Margin="10,0,0,0"
                                RelativePanel.AlignLeftWithPanel="True"
                                RelativePanel.AlignBottomWithPanel="True"
                                Icon="ChevronCircleLeft" IconVariant="Filled"
@@ -47,7 +47,7 @@
                     </ic:FluentIcon.RenderTransform>
                 </ic:FluentIcon>
 
-                <ic:FluentIcon Width="16" Height="16" Margin="0,0,10,0"
+                <ic:FluentIcon Width="20" Height="20" Margin="0,0,10,0"
                                RelativePanel.AlignRightWithPanel="True"
                                RelativePanel.AlignBottomWithPanel="True"
                                Icon="ChevronCircleRight" IconVariant="Filled"
