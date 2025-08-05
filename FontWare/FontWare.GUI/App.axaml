@@ -1,0 +1,15 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="FontWare.GUI.App"
+             xmlns:local="using:FontWare.GUI"
+             RequestedThemeVariant="Default"
+             xmlns:sukiUi="clr-namespace:SukiUI;assembly=SukiUI">
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <sukiUi:SukiTheme ThemeColor="Blue"></sukiUi:SukiTheme>
+        <!-- <FluentTheme></FluentTheme> -->
+    </Application.Styles>
+</Application>

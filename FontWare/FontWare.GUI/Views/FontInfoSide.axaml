@@ -1,0 +1,189 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+             xmlns:views="clr-namespace:FontWare.GUI.Views"
+             xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             x:Class="FontWare.GUI.Views.FontInfoSide">
+
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
+        <Style Selector="SelectableTextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
+        <Style Selector="SelectableTextBlock.hd">
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,2"></Setter>
+        </Style>
+        <Style Selector="SelectableTextBlock.vl">
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Margin" Value="0,0,0,14"></Setter>
+        </Style>
+        <Style Selector="Expander">
+            <Setter Property="Margin" Value="16,0,16,0"></Setter>
+        </Style>
+    </UserControl.Styles>
+
+    <DockPanel >
+        <StackPanel Margin="16,16,16,0"
+            DockPanel.Dock="Top">
+            <TextBlock
+                FontSize="18" FontWeight="Bold">
+                Abadi MT Condensed Light
+            </TextBlock>
+            <Border Height="3"></Border>
+            <TextBlock>2 styles</TextBlock>
+        </StackPanel>
+
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock
+                    FontSize="18" Margin="16,23,16,0">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                </TextBlock>
+                <TextBlock
+                    FontSize="18" Margin="16,0,16,0">
+                    abcdefghijklmnopqrstuvwxyz
+                </TextBlock>
+                <TextBlock
+                    FontSize="18" Margin="16,0,16,0">
+                    1234567890
+                </TextBlock>
+                <Border Height="20"></Border>
+                <Expander
+                    Header="Language Support">
+                    <SelectableTextBlock TextWrapping="Wrap">Languages: Abkhazian • Acehnese • Adangme • Adyghe • Afrikaans • Albanian • Aleut • Angika • Aragonese • Arapaho • Aromanian • Asu • Avaric • Awadhi • Aymara • Balinese • Basque • Bemba • Bena • Bini • Bislama • Buginese • Cajun French • Cebuano • Chamorro • Cheyenne • Chiga • Chuukese • Comorian • Cornish • Corsican</SelectableTextBlock>
+                </Expander>
+                <Expander Header="Identifiers">
+                    <StackPanel>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Family Name
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Abadi MT Condensed Extra Bold
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Style Name
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Regular
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            PostScript Name
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            AbadiMT-CondensedExtraBold
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Unique Name
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Abadi MT Condensed Extra Bold - 1992
+                        </SelectableTextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Usage">
+                    <StackPanel>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Copyright
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Typeface data Copyright © 1992-94 The Monotype Corporation. Copyright 1994 Microsoft Corporation. All rights reserved.
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Trademark
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Abadi® Trademark of The Monotype Corporation. Registered in U.S. Patent and Trademark Office.
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Embedding
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Editable embedding. This font may be embedded in documents and temporarily loaded on the remote system. Documents containing this font may be editable.
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Copy Protected
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            No
+                        </SelectableTextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Details">
+                    <StackPanel>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Format
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            OpenType TrueType
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            System Font
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            No
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Active
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Yes
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Glyph Count
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            243
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Location
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            /Users/karanocave/Library/Fonts/AbadiMTCondensedExtraBold.ttf
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="hd">
+                            Version
+                        </SelectableTextBlock>
+                        <SelectableTextBlock
+                            Classes="vl">
+                            Version 1.51
+                        </SelectableTextBlock>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+
+</UserControl>

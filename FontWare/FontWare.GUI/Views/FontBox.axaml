@@ -1,0 +1,85 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:FontWare.GUI.Views"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             xmlns:ic="using:FluentIcons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="200"
+             x:Class="FontWare.GUI.Views.FontBox">
+
+    <Border
+        x:Name="RootPanel"
+        Width="115" Height="115"
+        Background="Transparent"
+        CornerRadius="15"
+        BoxShadow="0 0.15 8 -2 LightGray"
+        Margin="15">
+        <suki:GlassCard
+            Width="115" Height="115"
+            BorderThickness="1"  CornerRadius="15"
+            IsInteractive="True">
+            <RelativePanel
+                Width="115" Height="100">
+                <TextBlock
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"
+                    Margin="0,0,0,10">
+                    Aa
+                </TextBlock>
+                <TextBlock
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                    RelativePanel.AlignBottomWithPanel="True"
+                    FontSize="10"
+                    Foreground="Gray" Margin="0,0,0,2">
+                    1 style
+                </TextBlock>
+
+                <ic:FluentIcon Width="16" Height="16" Margin="10,0,0,0"
+                               RelativePanel.AlignLeftWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"
+                               Icon="ChevronCircleLeft" IconVariant="Filled"
+                               Foreground="Gray"
+                               IsVisible="{Binding #RootPanel.IsPointerOver}">
+                    <ic:FluentIcon.RenderTransform>
+                        <ScaleTransform ScaleX="0.7" ScaleY="0.7"></ScaleTransform>
+                    </ic:FluentIcon.RenderTransform>
+                </ic:FluentIcon>
+
+                <ic:FluentIcon Width="16" Height="16" Margin="0,0,10,0"
+                               RelativePanel.AlignRightWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"
+                               Icon="ChevronCircleRight" IconVariant="Filled"
+                               Foreground="Gray"
+                               IsVisible="{Binding #RootPanel.IsPointerOver}">
+                    <ic:FluentIcon.RenderTransform>
+                        <ScaleTransform ScaleX="0.7" ScaleY="0.7"></ScaleTransform>
+                    </ic:FluentIcon.RenderTransform>
+                </ic:FluentIcon>
+
+                <ic:FluentIcon Width="20" Height="20" Margin="0,-1,7,0"
+                               RelativePanel.AlignRightWithPanel="True"
+                               RelativePanel.AlignTopWithPanel="True"
+                               Icon="LockClosed" IconVariant="Filled"
+                               Foreground="Gray"
+                               IsVisible="{Binding #RootPanel.IsPointerOver}">
+                    <ic:FluentIcon.RenderTransform>
+                        <ScaleTransform ScaleX="0.7" ScaleY="0.7"></ScaleTransform>
+                    </ic:FluentIcon.RenderTransform>
+                </ic:FluentIcon>
+
+                <ic:FluentIcon Width="20" Height="20" Margin="0,1,7,0"
+                               RelativePanel.AlignRightWithPanel="True"
+                               RelativePanel.AlignTopWithPanel="True"
+                               Icon="ArrowDownload" IconVariant="Filled"
+                               Foreground="Gray"
+                               IsVisible="False">
+                    <ic:FluentIcon.RenderTransform>
+                        <ScaleTransform ScaleX="0.7" ScaleY="0.7"></ScaleTransform>
+                    </ic:FluentIcon.RenderTransform>
+                </ic:FluentIcon>
+            </RelativePanel>
+        </suki:GlassCard>
+    </Border>
+</UserControl>

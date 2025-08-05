@@ -1,0 +1,112 @@
+<sukiUi:SukiWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:vm="using:FontWare.GUI.ViewModels"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                   xmlns:views="clr-namespace:FontWare.GUI.Views"
+                   xmlns:ic="using:FluentIcons.Avalonia"
+                   mc:Ignorable="d" d:DesignWidth="1072" d:DesignHeight="450"
+                   x:Class="FontWare.GUI.Views.MainWindow"
+                   x:DataType="vm:MainWindowViewModel"
+                   Icon="/Assets/avalonia-logo.ico"
+                   Title="FontWare"
+                   BackgroundStyle="GradientSoft"
+                   BackgroundAnimationEnabled="True"
+                   Width="1072" Height="650"
+                   CanPin="True" CanFullScreen="True" TitleBarAutoHideDelay="3000">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <sukiUi:SukiWindow.Styles>
+        <Style Selector="ToggleButton.WindowControlsButton">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="25" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0.01" />
+                </Transitions>
+            </Setter>
+            <Style Selector="^:pointerover, ^:flyout-open">
+                <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor25}" />
+            </Style>
+            <Style Selector="^.Close">
+                <Style Selector="^:pointerover, ^:flyout-open">
+                    <Setter Property="Background" Value="#90D00000" />
+                </Style>
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="#C5D30000" />
+                </Style>
+            </Style>
+        </Style>
+        <Style Selector="RadioButton.Chips Border">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="RadioButton.Chips /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="6,0,6,0"></Setter>
+        </Style>
+        <Style Selector="TextBox.sr /template/ Grid">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style Selector="Border.FilterGroup">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="Border.FilterGroup:pointerover">
+            <Setter Property="Background" Value="LightGray" />
+        </Style>
+    </sukiUi:SukiWindow.Styles>
+
+    <sukiUi:SukiWindow.RightWindowTitleBarControls>
+        <StackPanel Orientation="Horizontal">
+            <ToggleButton Classes="WindowControlsButton">
+                <ic:FluentIcon Icon="Filter" IconVariant="Filled" />
+            </ToggleButton>
+            <Border Width="7" />
+            <Border Classes="FilterGroup" CornerRadius="8">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Classes="WindowControlsButton Chips" IsChecked="True">
+                        <ic:FluentIcon Icon="Grid" IconVariant="Regular" />
+                    </RadioButton>
+                    <RadioButton Classes="WindowControlsButton Chips">
+                        <ic:FluentIcon Icon="AlignSpaceEvenlyVertical" IconVariant="Regular" />
+                    </RadioButton>
+                    <RadioButton Classes="WindowControlsButton Chips">
+                        <ic:FluentIcon Icon="TextBulletList" IconVariant="Filled" />
+                    </RadioButton>
+                </StackPanel>
+            </Border>
+            <Border Width="7" />
+            <Viewbox Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <ic:FluentIcon Icon="Subtract" IconVariant="Filled" />
+                    <Slider Width="150"></Slider>
+                    <ic:FluentIcon Icon="Add" IconVariant="Filled" />
+                </StackPanel>
+            </Viewbox>
+            <Border Width="7" />
+            <ToggleButton Classes="WindowControlsButton">
+                <ic:FluentIcon Icon="Info" />
+            </ToggleButton>
+            <Border Width="7" />
+                <TextBox Classes="sr"
+                         Width="200" MinHeight="21" Height="21"
+                         Padding="0" Margin="0" Watermark="Search"/>
+        </StackPanel>
+    </sukiUi:SukiWindow.RightWindowTitleBarControls>
+
+    <sukiUi:SukiSideMenu
+        ItemsSource="{Binding MenuItems}">
+    </sukiUi:SukiSideMenu>
+
+</sukiUi:SukiWindow>
