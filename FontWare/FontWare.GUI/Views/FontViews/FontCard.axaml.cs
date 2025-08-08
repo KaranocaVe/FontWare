@@ -1,10 +1,10 @@
-using SukiUI.Controls;
+using Avalonia.Controls;
 
 namespace FontWare.GUI.Views
 {
-    public partial class MainWindow : SukiWindow
+    public partial class FontCard : UserControl
     {
-        public MainWindow()
+        public FontCard()
         {
             InitializeComponent();
         }

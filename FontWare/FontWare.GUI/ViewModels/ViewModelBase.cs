@@ -1,7 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using ReactiveUI;
 
-namespace FontWare.GUI.ViewModels;
-
-public class ViewModelBase : ObservableObject
+namespace FontWare.GUI.ViewModels
 {
+    public class ViewModelBase : ReactiveObject
+    {
+    }
 }

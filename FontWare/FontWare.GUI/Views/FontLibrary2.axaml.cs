@@ -4,12 +4,11 @@ using Avalonia.Markup.Xaml;
 
 namespace FontWare.GUI.Views
 {
-    public partial class FontBar : UserControl
+    public partial class FontLibrary2 : UserControl
     {
-        public FontBar()
+        public FontLibrary2()
         {
             InitializeComponent();
         }
     }
 }
-

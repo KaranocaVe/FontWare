@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fontFilter="clr-namespace:FontWare.GUI.Views.FontViews.FontFilters"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="50"
+             x:Class="FontWare.GUI.Views.FontViews.FontFilters.FontFilter"
+             xmlns:vm="using:FontWare.GUI.ViewModels"
+             x:DataType="vm:FontFilterViewModel">
+
+    <Design.DataContext>
+        <vm:FontFilterViewModel />
+    </Design.DataContext>
+
+
+    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SukiBorderBrush}"
+            Bounds="{Binding Bounds,Mode=OneWayToSource}"
+            Height="36">
+        <Panel>
+            <fontFilter:FontFilterLong IsVisible="{Binding ShowLong}"
+                                       />
+            <fontFilter:FontFilterShort IsVisible="{Binding ShowShort}"
+                                        HorizontalAlignment="Left"/>
+            <!-- <TextBlock Text="{Binding Bounds.Width}"></TextBlock> -->
+        </Panel>
+    </Border>
+
+</UserControl>

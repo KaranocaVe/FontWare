@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="150"
+             xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             x:Class="FontWare.GUI.Views.FontBar">
+
+    <sukiUi:GlassCard Padding="0" Margin="26,4,8,4">
+        <StackPanel Orientation="Vertical" Margin="24,15,0,15">
+            <TextBlock
+                FontWeight="Bold">
+                Abadi MT Condensed Extra Bold
+            </TextBlock>
+            <TextBlock
+                Foreground="{DynamicResource SukiMuteText}">
+                1 style
+            </TextBlock>
+            <Border Height="20" />
+            <TextBox Classes="NoShadow"
+                     Padding="-6,0,0,0"
+                     FontSize="40"
+                     CornerRadius="0">
+                The quick brown fox jumps over the lazy dog and runs away.
+            </TextBox>
+
+            <TextBlock>Regular</TextBlock>
+        </StackPanel>
+    </sukiUi:GlassCard>
+</UserControl>

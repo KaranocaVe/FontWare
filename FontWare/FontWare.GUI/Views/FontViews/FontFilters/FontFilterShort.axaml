@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+             x:Class="FontWare.GUI.Views.FontViews.FontFilters.FontFilterShort">
+
+    <UserControl.Styles>
+        <Style Selector="ComboBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="0"></Setter>
+        </Style>
+        <Style Selector="ComboBox /template/ suki|GlassCard#border.Discrete /template/ Panel#RootPanel">
+            <Setter Property="Margin" Value="0,5"/>
+        </Style>
+    </UserControl.Styles>
+
+    <DockPanel>
+        <ComboBox Height="35" Width="170" Margin="0"
+                  Padding="0" SelectedIndex="0">
+            <ComboBox.Items>
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem Content="Active"/>
+                <ComboBoxItem Content="Inactive"/>
+                <ComboBoxItem Content="Duplicate"/>
+                <ComboBoxItem Content="Downloadable"/>
+                <ComboBoxItem IsEnabled="False">
+                    <Separator Height="1"></Separator>
+                </ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">
+                    <TextBlock FontSize="14" Foreground="{DynamicResource SukiMuteText}">
+                        Added
+                    </TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem Content="Today"/>
+                <ComboBoxItem Content="Last 7 Days"/>
+            </ComboBox.Items>
+        </ComboBox>
+    </DockPanel>
+</UserControl>

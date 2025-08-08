@@ -2,13 +2,14 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace FontWare.GUI.Views
+namespace FontWare.GUI.Views.FontViews.FontFilters
 {
-    public partial class FontBox : UserControl
+    public partial class FontFilterLong : UserControl
     {
-        public FontBox()
+        public FontFilterLong()
         {
             InitializeComponent();
         }
     }
 }
+

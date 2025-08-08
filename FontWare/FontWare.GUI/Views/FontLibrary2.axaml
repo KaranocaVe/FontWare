@@ -1,0 +1,94 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:views="clr-namespace:FontWare.GUI.Views"
+             x:Class="FontWare.GUI.Views.FontLibrary2">
+
+    <UserControl.Styles>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+        <Style Selector="RadioButton.Chips Border">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="RadioButton.Chips /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="6,0" />
+        </Style>
+    </UserControl.Styles>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top"
+                          HorizontalScrollBarVisibility="Auto">
+                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SukiBorderBrush}">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Left"
+                                    Orientation="Horizontal"
+                                    Margin="5">
+                            <RadioButton Margin="0,0,1,0"
+                                         Classes="Chips" Content="All" IsChecked="True" />
+                            <RadioButton Margin="1,0,1,0"
+                                         Classes="Chips" Content="Active" IsChecked="False" />
+                            <RadioButton Margin="1,0,1,0"
+                                         Classes="Chips" Content="Inactive" IsChecked="False" />
+                            <RadioButton Margin="1,0,0,0"
+                                         Classes="Chips" Content="Selected" IsChecked="False" />
+                            <TextBlock VerticalAlignment="Center" Margin="8,0,0,0" Foreground="Gray">513 of 513 typefaces</TextBlock>
+                        </StackPanel>
+                        <StackPanel DockPanel.Dock="Right"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="5">
+                            <!-- <TextBlock>Added:</TextBlock> -->
+                            <RadioButton Margin="0,0,1,0"
+                                         Classes="Chips" Content="Today" IsChecked="True" />
+                            <RadioButton Margin="1,0,0,0"
+                                         Classes="Chips" Content="Last 7 Days" IsChecked="True" />
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+            </ScrollViewer>
+
+            <ScrollViewer>
+                <StackPanel>
+                    <Panel Height="22" />
+                    <ListBox Classes="WithoutCheck"
+                             Padding="0" Margin="0"
+                             SelectionMode="Multiple">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <views:WrapPanel ItemsAlignment="SpaceBetween" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                        <views:FontBar />
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        <GridSplitter Grid.Column="1" Background="{DynamicResource SukiBorderBrush}" />
+        <views:FontInfoSide
+            Grid.Column="2" />
+    </Grid>
+</UserControl>

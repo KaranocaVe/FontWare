@@ -1,42 +1,66 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
 using FluentIcons.Avalonia;
 using FluentIcons.Common;
 using FontWare.GUI.Views;
+using ReactiveUI;
 using SukiUI.Controls;
 
-namespace FontWare.GUI.ViewModels;
-
-public partial class MainWindowViewModel : ViewModelBase
+namespace FontWare.GUI.ViewModels
 {
-    [ObservableProperty]
-    ObservableCollection<SukiSideMenuItem> _menuItems;
-    public MainWindowViewModel()
+    public partial class MainWindowViewModel : ViewModelBase
     {
-        _menuItems =
-        [
-            new SukiSideMenuItem
-            {
-                Header = "Font Library",
-                Icon = new FluentIcon
+        private ObservableCollection<SukiSideMenuItem> _menuItems;
+        public ObservableCollection<SukiSideMenuItem> MenuItems
+        {
+            get => _menuItems;
+            set => this.RaiseAndSetIfChanged(ref _menuItems, value);
+        }
+        public MainWindowViewModel()
+        {
+            _menuItems =
+            [
+                new SukiSideMenuItem
                 {
-                    Icon = Icon.Grid,
-                    IconVariant = IconVariant.Regular
+                    Header = "Font Library1",
+                    Icon = new FluentIcon
+                    {
+                        Icon = Icon.Grid,
+                        IconVariant = IconVariant.Regular
+                    },
+                    PageContent = new FontLibrary()
                 },
-                PageContent = new FontLibrary()
-            },
+                new SukiSideMenuItem
+                {
+                    Header = "Font Library2",
+                    Icon = new FluentIcon
+                    {
+                        Icon = Icon.Grid,
+                        IconVariant = IconVariant.Regular
+                    },
+                    PageContent = new FontLibrary2()
+                },
+                new SukiSideMenuItem
+                {
+                    Header = "Font Library3",
+                    Icon = new FluentIcon
+                    {
+                        Icon = Icon.Grid,
+                        IconVariant = IconVariant.Regular
+                    },
+                    PageContent = new FontLibrary3()
+                },
 
-            new SukiSideMenuItem
-            {
-                Header = "Settings",
-                Icon = new FluentIcon
+                new SukiSideMenuItem
                 {
-                    Icon = Icon.Settings,
-                    IconVariant = IconVariant.Regular
-                },
-                PageContent = new Settings()
-            }
-        ];
+                    Header = "Settings",
+                    Icon = new FluentIcon
+                    {
+                        Icon = Icon.Settings,
+                        IconVariant = IconVariant.Regular
+                    },
+                    PageContent = new Settings()
+                }
+            ];
+        }
     }
 }

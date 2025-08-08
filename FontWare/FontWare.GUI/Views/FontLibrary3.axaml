@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="using:FontWare.GUI.ViewModels"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FontWare.GUI.Views.FontLibrary3"
+             xmlns:views="clr-namespace:FontWare.GUI.Views"
+             x:DataType="vm:DataGridDebugViewModel">
+
+    <Design.DataContext>
+        <vm:DataGridDebugViewModel />
+    </Design.DataContext>
+
+
+    <UserControl.Styles>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+        <Style Selector="RadioButton.Chips Border">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="RadioButton.Chips /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="6,0" />
+        </Style>
+    </UserControl.Styles>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top"
+                          HorizontalScrollBarVisibility="Auto">
+                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SukiBorderBrush}">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Left"
+                                    Orientation="Horizontal"
+                                    Margin="5">
+                            <RadioButton Margin="0,0,1,0"
+                                         Classes="Chips" Content="All" IsChecked="True" />
+                            <RadioButton Margin="1,0,1,0"
+                                         Classes="Chips" Content="Active" IsChecked="False" />
+                            <RadioButton Margin="1,0,1,0"
+                                         Classes="Chips" Content="Inactive" IsChecked="False" />
+                            <RadioButton Margin="1,0,0,0"
+                                         Classes="Chips" Content="Selected" IsChecked="False" />
+                            <TextBlock VerticalAlignment="Center" Margin="8,0,0,0" Foreground="Gray">513 of 513 typefaces</TextBlock>
+                        </StackPanel>
+                        <StackPanel DockPanel.Dock="Right"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="5">
+                            <!-- <TextBlock>Added:</TextBlock> -->
+                            <RadioButton Margin="0,0,1,0"
+                                         Classes="Chips" Content="Today" IsChecked="True" />
+                            <RadioButton Margin="1,0,0,0"
+                                         Classes="Chips" Content="Last 7 Days" IsChecked="True" />
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+            </ScrollViewer>
+
+            <DataGrid ItemsSource="{Binding Fonts}"
+                      AutoGenerateColumns="False"
+                      CanUserReorderColumns="True"
+                      CanUserResizeColumns="True"
+                      CanUserSortColumns="True"
+                      HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Typeface"
+                                        Width="2*"
+                                        Binding="{Binding Typeface}"
+                                        IsReadOnly="True" />
+
+                    <DataGridTextColumn Header="Styles"
+                                        Width="*" MaxWidth="100"
+                                        Binding="{Binding StylesCount}"
+                                        IsReadOnly="True" />
+
+                    <DataGridTextColumn Header="Format"
+                                        Width="*" MaxWidth="120"
+                                        Binding="{Binding Format}"
+                                        IsReadOnly="True" />
+
+                    <!-- <DataGridCheckBoxColumn Header="Locked" -->
+                    <!--                         Binding="{Binding IsLocked}" -->
+                    <!--                         IsReadOnly="True" /> -->
+                    <!-- -->
+                    <!-- <DataGridCheckBoxColumn Header="Downloadable" -->
+                    <!--                         Binding="{Binding IsDownloadable}" -->
+                    <!--                         IsReadOnly="True" /> -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <GridSplitter Grid.Column="1" Background="{DynamicResource SukiBorderBrush}" />
+        <views:FontInfoSide
+            Grid.Column="2" />
+    </Grid>
+
+</UserControl>

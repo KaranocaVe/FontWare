@@ -9,7 +9,7 @@
     </Application.DataTemplates>
 
     <Application.Styles>
-        <sukiUi:SukiTheme ThemeColor="Blue"></sukiUi:SukiTheme>
+        <sukiUi:SukiTheme ThemeColor="Blue" />
         <!-- <FluentTheme></FluentTheme> -->
     </Application.Styles>
 </Application>

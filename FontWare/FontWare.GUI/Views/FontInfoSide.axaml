@@ -3,39 +3,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
-             xmlns:views="clr-namespace:FontWare.GUI.Views"
-             xmlns:sukiUi="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              x:Class="FontWare.GUI.Views.FontInfoSide">
 
     <UserControl.Styles>
         <Style Selector="TextBlock">
-            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
         <Style Selector="SelectableTextBlock">
-            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
         <Style Selector="SelectableTextBlock.hd">
-            <Setter Property="FontSize" Value="13"></Setter>
-            <Setter Property="FontWeight" Value="Bold"></Setter>
-            <Setter Property="Margin" Value="0,0,0,2"></Setter>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,0,0,2" />
         </Style>
         <Style Selector="SelectableTextBlock.vl">
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Margin" Value="0,0,0,14"></Setter>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Margin" Value="0,0,0,14" />
         </Style>
         <Style Selector="Expander">
-            <Setter Property="Margin" Value="16,0,16,0"></Setter>
+            <Setter Property="Margin" Value="16,0,16,0" />
         </Style>
     </UserControl.Styles>
 
-    <DockPanel >
+    <DockPanel>
         <StackPanel Margin="16,16,16,0"
-            DockPanel.Dock="Top">
+                    DockPanel.Dock="Top">
             <TextBlock
                 FontSize="18" FontWeight="Bold">
                 Abadi MT Condensed Light
             </TextBlock>
-            <Border Height="3"></Border>
+            <Border Height="3" />
             <TextBlock>2 styles</TextBlock>
         </StackPanel>
 
@@ -53,7 +51,7 @@
                     FontSize="18" Margin="16,0,16,0">
                     1234567890
                 </TextBlock>
-                <Border Height="20"></Border>
+                <Border Height="20" />
                 <Expander
                     Header="Language Support">
                     <SelectableTextBlock TextWrapping="Wrap">Languages: Abkhazian • Acehnese • Adangme • Adyghe • Afrikaans • Albanian • Aleut • Angika • Aragonese • Arapaho • Aromanian • Asu • Avaric • Awadhi • Aymara • Balinese • Basque • Bemba • Bena • Bini • Bislama • Buginese • Cajun French • Cebuano • Chamorro • Cheyenne • Chiga • Chuukese • Comorian • Cornish • Corsican</SelectableTextBlock>

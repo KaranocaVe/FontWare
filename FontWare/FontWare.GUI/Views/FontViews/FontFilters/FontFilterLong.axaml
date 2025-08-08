@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="50"
+             x:Class="FontWare.GUI.Views.FontViews.FontFilters.FontFilterLong">
+
+    <UserControl.Styles>
+        <Style Selector="RadioButton.Chips Border">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="RadioButton.Chips /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="6,0" />
+        </Style>
+    </UserControl.Styles>
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left"
+                        Orientation="Horizontal"
+                        Margin="5">
+                <RadioButton Margin="0,0,1,0"
+                             Classes="Chips" Content="All" IsChecked="True" />
+                <RadioButton Margin="1,0,1,0"
+                             Classes="Chips" Content="Active" IsChecked="False" />
+                <RadioButton Margin="1,0,1,0"
+                             Classes="Chips" Content="Inactive" IsChecked="False" />
+                <RadioButton Margin="1,0,0,0"
+                             Classes="Chips" Content="Selected" IsChecked="False" />
+                <TextBlock VerticalAlignment="Center" Margin="8,0,0,0" Foreground="Gray">513 of 513 typefaces</TextBlock>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="5">
+                <!-- <TextBlock>Added:</TextBlock> -->
+                <RadioButton Margin="0,0,1,0"
+                             Classes="Chips" Content="Today" IsChecked="True" />
+                <RadioButton Margin="1,0,0,0"
+                             Classes="Chips" Content="Last 7 Days" IsChecked="True" />
+            </StackPanel>
+        </DockPanel>
+
+</UserControl>
